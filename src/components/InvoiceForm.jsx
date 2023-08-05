@@ -112,208 +112,181 @@ const InvoiceForm = () => {
       onSubmit={reviewInvoiceHandler}
     >
       <div className="my-6 flex-1 space-y-2  rounded-md bg-white p-4 shadow-sm sm:space-y-4 md:p-6">
-
-<div className="grid grid-cols-2 gap-[20.75rem]">
-
-<div>
-  {/* image start */}
-<div class="flex w-40 items-center justify-center">
-          <label
-            for="dropzone-file"
-            class="dark:hover:bg-bray-800 flex h-40 w-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-slate-300 border-gray-300 bg-gray-50 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:border-gray-500 dark:hover:bg-gray-600"
-          >
-            <div class="flex flex-col items-center justify-center pt-5 pb-6">
-              <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                <span class="font-semibold">+ ADD YOUR LOGO</span>
-              </p>
+        <div className="grid grid-cols-2 gap-[20.75rem]">
+          <div>
+            {/* image start */}
+            <div class="flex w-40 items-center justify-center">
+              <label
+                for="dropzone-file"
+                class="dark:hover:bg-bray-800 flex h-40 w-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-slate-300 border-gray-300 bg-gray-50 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+              >
+                <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                  <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                    <span class="font-semibold">+ ADD YOUR LOGO</span>
+                  </p>
+                </div>
+                <input id="dropzone-file" type="file" class="hidden" />
+              </label>
             </div>
-            <input id="dropzone-file" type="file" class="hidden" />
-          </label>
-          
-        </div>
-        {/* image end */}
+            {/* image end */}
 
-        <div className="pt-4 pb-8">
-          
-          <input
-            required
-            className="flex-1 max-w-[300px] shadow-md pb-8"
-            placeholder="who is the invoice from?(required)"
-            type="text"
-            name="cashierName"
-            id="cashierName"
-            value={cashierName}
-            onChange={(event) => setCashierName(event.target.value)}
-          />
-          <br/>
-
-<div className="grid grid-cols-2 gap-10">
-  <div className="flex flex-col">
-  <label
-            htmlFor="customerName"
-            className="col-start-2 row-start-1 text-sm font-thin md:text-base"
-          >
-            <br/>
-            Bill TO:
-          </label>
-          <input
-            required
-            className="flex-1 w-[150px] pb-10 shadow-md"
-            placeholder="Customer name"
-            type="text"
-            name="customerName"
-            id="customerName"
-            value={customerName}
-            onChange={(event) => setCustomerName(event.target.value)}
-          />
-  </div>
-  <div className="flex flex-col">
-  <label
-            htmlFor="customerName"
-            className="col-start-2 row-start-1 text-sm font-thin md:text-base"
-          >
-            <br/>
-            Ship To:
-          </label>
-          <input
-            required
-            className="flex-1 w-[150px] pb-10 shadow-md"
-            placeholder="Customer name"
-            type="text"
-            name="customerName"
-            id="customerName"
-            value={customerName}
-            onChange={(event) => setCustomerName(event.target.value)}
-          />
-  </div>
-
-
-
-</div>
-
-          
-        </div>
-</div>
-
-
-<div className="flex flex-col justify-between space-y-2 border-gray-900/10 pb-4 md:flex-row md:items-center md:space-y-0">
-          
-          
-          <div className="-mt-350 flex flex-col items-center space-x-2 ">
-
-            <div className="flex flex-col">
-            <label className="font-bold text-4xl" htmlFor="invoiceNumber" >
-              Invoice
-            </label>
+            <div className="pt-4 pb-8">
               <input
-              required
-              className="max-w-[130px] shadow-md cursor-pointer hover:border-"
-              type="number"
-              name="invoiceNumber"
-              id="invoiceNumber"
-              min="1"
-              step="1"
-              value={invoiceNumber}
-              onChange={(event) => setInvoiceNumber(event.target.value)}
-            />
-            
+                required
+                className="max-w-[300px] flex-1 pb-8 shadow-md"
+                placeholder="who is the invoice from?(required)"
+                type="text"
+                name="cashierName"
+                id="cashierName"
+                value={cashierName}
+                onChange={(event) => setCashierName(event.target.value)}
+              />
+              <br />
+
+              <div className="grid grid-cols-2 gap-10">
+                <div className="flex flex-col">
+                  <label
+                    htmlFor="customerName"
+                    className="col-start-2 row-start-1 text-sm font-thin md:text-base"
+                  >
+                    <br />
+                    Bill TO:
+                  </label>
+                  <input
+                    required
+                    className="w-[150px] flex-1 pb-10 shadow-md"
+                    placeholder="Customer name"
+                    type="text"
+                    name="customerName"
+                    id="customerName"
+                    value={customerName}
+                    onChange={(event) => setCustomerName(event.target.value)}
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label
+                    htmlFor="customerName"
+                    className="col-start-2 row-start-1 text-sm font-thin md:text-base"
+                  >
+                    <br />
+                    Ship To:
+                  </label>
+                  <input
+                    required
+                    className="w-[150px] flex-1 pb-10 shadow-md"
+                    placeholder="Customer name"
+                    type="text"
+                    name="customerName"
+                    id="customerName"
+                    value={customerName}
+                    onChange={(event) => setCustomerName(event.target.value)}
+                  />
+                </div>
+              </div>
             </div>
-            
+          </div>
 
-            <br/>
+          <div className="flex flex-col justify-between space-y-2 border-gray-900/10 pb-4 md:flex-row md:items-center md:space-y-0">
+            <div className="-mt-350 flex flex-col items-center space-x-2 ">
+              <div className="flex flex-col">
+                <label className="text-4xl font-bold" htmlFor="invoiceNumber">
+                  Invoice
+                </label>
+                <div className="flex"><p className="bg-gray-300 w-10 text-center p-1">#</p>
+                <input
+                  required
+                  className="hover:border- max-w-[130px] cursor-pointer shadow-md"
+                  type="number"
+                  name="invoiceNumber"
+                  id="invoiceNumber"
+                  min="1"
+                  step="1"
+                  value={invoiceNumber}
+                  onChange={(event) => setInvoiceNumber(event.target.value)}
+                />
+                </div>
+                
+              </div>
 
-            <div className="flex flex-col items-end">
-            
-            <div className="flex">
-<label className="font-thin pr-1" htmlFor="invoiceNumber" >
-              Date
-            </label>
-            
-            <input
-              required
-              className="max-w-[130px] shadow-md curser-pointer hover: border border-gray-700 "
-              type="number"
-              name="invoiceNumber"
-              id="invoiceNumber"
-              min="1"
-              step="1"
-              value={invoiceNumber}
-              onChange={(event) => setInvoiceNumber(event.target.value)}
-            />
-</div>
-            
-            
+              <br />
 
-<div className="flex mt-1">
-<label className="font-thin pr-1" htmlFor="invoiceNumber" >
-              Payment Terms
-            </label>
-            
-            <input
-              required
-              className="max-w-[130px] shadow-md"
-              type="number"
-              name="invoiceNumber"
-              id="invoiceNumber"
-              min="1"
-              step="1"
-              value={invoiceNumber}
-              onChange={(event) => setInvoiceNumber(event.target.value)}
-            />
-</div>
+              <div className="flex flex-col items-end">
+                <div className="flex">
+                  <label className="pr-1 font-thin" htmlFor="invoiceNumber">
+                    Date
+                  </label>
 
-<div className="flex mt-1">
-<label className="font-thin pr-1" htmlFor="invoiceNumber" >
-              Due Date
-            </label>
-            
-            <input
-              required
-              className="max-w-[130px] shadow-md"
-              type="number"
-              name="invoiceNumber"
-              id="invoiceNumber"
-              min="1"
-              step="1"
-              value={invoiceNumber}
-              onChange={(event) => setInvoiceNumber(event.target.value)}
-            />
-</div>
+                  <input
+                    required
+                    className="curser-pointer hover: max-w-[130px] border border-gray-700 shadow-md "
+                    type="number"
+                    name="invoiceNumber"
+                    id="invoiceNumber"
+                    min="1"
+                    step="1"
+                    value={invoiceNumber}
+                    onChange={(event) => setInvoiceNumber(event.target.value)}
+                  />
+                </div>
 
-<div className="flex mt-1">
-<label className="font-thin pr-1" htmlFor="invoiceNumber" >
-              PO Number
-            </label>
-            
-            <input
-              required
-              className="max-w-[130px] shadow-md"
-              type="number"
-              name="invoiceNumber"
-              id="invoiceNumber"
-              min="1"
-              step="1"
-              value={invoiceNumber}
-              onChange={(event) => setInvoiceNumber(event.target.value)}
-            />
-</div>
+                <div className="mt-1 flex">
+                  <label className="pr-1 font-thin" htmlFor="invoiceNumber">
+                    Payment Terms
+                  </label>
+
+                  <input
+                    required
+                    className="max-w-[130px] shadow-md"
+                    type="number"
+                    name="invoiceNumber"
+                    id="invoiceNumber"
+                    min="1"
+                    step="1"
+                    value={invoiceNumber}
+                    onChange={(event) => setInvoiceNumber(event.target.value)}
+                  />
+                </div>
+
+                <div className="mt-1 flex">
+                  <label className="pr-1 font-thin" htmlFor="invoiceNumber">
+                    Due Date
+                  </label>
+
+                  <input
+                    required
+                    className="max-w-[130px] shadow-md"
+                    type="number"
+                    name="invoiceNumber"
+                    id="invoiceNumber"
+                    min="1"
+                    step="1"
+                    value={invoiceNumber}
+                    onChange={(event) => setInvoiceNumber(event.target.value)}
+                  />
+                </div>
+
+                <div className="mt-1 flex">
+                  <label className="pr-1 font-thin" htmlFor="invoiceNumber">
+                    PO Number
+                  </label>
+
+                  <input
+                    required
+                    className="max-w-[130px] shadow-md"
+                    type="number"
+                    name="invoiceNumber"
+                    id="invoiceNumber"
+                    min="1"
+                    step="1"
+                    value={invoiceNumber}
+                    onChange={(event) => setInvoiceNumber(event.target.value)}
+                  />
+                </div>
+              </div>
             </div>
-
-
-
-
-
-
           </div>
         </div>
 
-</div>
-
-        
-        
-        
-        
-        
         <table className="my-4 w-full p-4 text-left">
           <thead>
             <tr className="border-b border-gray-900/10 bg-slate-800 text-sm md:text-base">
@@ -393,7 +366,7 @@ const InvoiceForm = () => {
           </tbody>
         </table>
         <button
-          className="w-auto rounded-md bg-green-500 px-4 py-2 text-sm text-white shadow-sm hover:bg-green-600"
+          className="flex w-auto rounded-md bg-green-500 px-4 py-2 text-sm text-white shadow-sm hover:bg-green-600"
           type="button"
           onClick={addItemHandler}
         >
@@ -413,29 +386,81 @@ const InvoiceForm = () => {
             <line x1="12" y1="5" x2="12" y2="19" />{" "}
             <line x1="5" y1="12" x2="19" y2="12" />
           </svg>
+          Line Item
         </button>
-        <div className="flex flex-col items-end space-y-2 pt-6">
-          <div className="flex w-full justify-between md:w-1/2">
-            <span className="font-bold">Subtotal:</span>
-            <span>${subtotal.toFixed(2)}</span>
+
+        <div className="grid grid-cols-2 gap-[20.rem]">
+          <div className="flex flex-col">
+            <div className="flex flex-col">
+              <label
+                htmlFor="customerName"
+                className="col-start-2 row-start-1 text-sm font-thin md:text-base"
+              >
+                <br />
+                Notes
+              </label>
+              <input
+                required
+                className="w-[430px] flex-1 pb-10 shadow-md"
+                placeholder="Notes - any relevant information not already covered
+                "
+                type="text"
+                name="customerName"
+                id="customerName"
+                value={customerName}
+                onChange={(event) => setCustomerName(event.target.value)}
+              />
+            </div>
+            <div className="flex flex-col">
+              <label
+                htmlFor="customerName"
+                className="col-start-2 row-start-1 text-sm font-thin md:text-base"
+              >
+                <br />
+                Terms
+              </label>
+              <input
+                required
+                className="w-[430px] flex-1 pb-10 shadow-md "
+                placeholder="Terms and conditions - late fees, payment methods
+                "
+                type="text"
+                name="customerName"
+                id="customerName"
+                value={customerName}
+                onChange={(event) => setCustomerName(event.target.value)}
+              />
+            </div>
           </div>
-          <div className="flex w-full justify-between md:w-1/2">
-            <span className="font-bold">Discount:</span>
-            <span>
-              ({discount || "0"}%)${discountRate.toFixed(2)}
-            </span>
-          </div>
-          <div className="flex w-full justify-between md:w-1/2">
-            <span className="font-bold">Tax:</span>
-            <span>
-              ({tax || "0"}%)${taxRate.toFixed(2)}
-            </span>
-          </div>
-          <div className="flex w-full justify-between border-t border-gray-900/10 pt-2 md:w-1/2">
-            <span className="font-bold">Total:</span>
-            <span className="font-bold">
-              ${total % 1 === 0 ? total : total.toFixed(2)}
-            </span>
+
+          <div className="flex flex-col items-end space-y-2 pt-6">
+            <div className="flex w-full justify-between md:w-1/2">
+              <span className="font-bold">Subtotal:</span>
+              <span>${subtotal.toFixed(2)}</span>
+            </div>
+            <div className="flex">
+              <span className="pr-5 text-teal-600">+Discount</span>
+              <span className="pr-5 text-teal-600">+Tax</span>
+              <span className="text-teal-600">+Shipping</span>
+            </div>
+            <div className="flex w-full justify-between md:w-1/2">
+              <span className="font-bold">Discount:</span>
+              <span>
+                ({discount || "0"}%)${discountRate.toFixed(2)}
+              </span>
+            </div>
+            <div className="flex w-full justify-between md:w-1/2">
+              <span className="font-bold">Tax:</span>
+              <span>
+                ({tax || "0"}%)${taxRate.toFixed(2)}
+              </span>
+            </div>
+            <div className="flex w-full justify-between border-t border-gray-900/10 pt-2 md:w-1/2">
+              <span className="font-bold">Total:</span>
+              <span className="font-bold">
+                ${total % 1 === 0 ? total : total.toFixed(2)}
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -464,10 +489,7 @@ const InvoiceForm = () => {
             onAddNextInvoice={addNextInvoiceHandler}
           />
           <div className="space-y-4 py-2">
-            <label
-              for="countries"
-              className="text-sm font-bold md:text-base"
-            >
+            <label for="countries" className="text-sm font-bold md:text-base">
               CURRENCY
             </label>
             <select
