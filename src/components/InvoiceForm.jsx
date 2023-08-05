@@ -112,8 +112,12 @@ const InvoiceForm = () => {
       onSubmit={reviewInvoiceHandler}
     >
       <div className="my-6 flex-1 space-y-2  rounded-md bg-white p-4 shadow-sm sm:space-y-4 md:p-6">
-        {/* image start */}
-        <div class="flex w-40 items-center justify-center">
+
+<div className="grid grid-cols-2 gap-[20.75rem]">
+
+<div>
+  {/* image start */}
+<div class="flex w-40 items-center justify-center">
           <label
             for="dropzone-file"
             class="dark:hover:bg-bray-800 flex h-40 w-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-slate-300 border-gray-300 bg-gray-50 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:border-gray-500 dark:hover:bg-gray-600"
@@ -128,21 +132,82 @@ const InvoiceForm = () => {
           
         </div>
         {/* image end */}
-        
-        <div className="flex flex-col justify-between space-y-2 border-gray-900/10 pb-4 md:flex-row md:items-center md:space-y-0">
-          <div className="flex space-x-2">
-            <span className="font-bold">Current Date: </span>
-            <span>{today}</span>
-          </div>
+
+        <div className="pt-4 pb-8">
           
-          <div className="flex items-center space-x-2">
-            
-            <label className="font-bold" htmlFor="invoiceNumber">
-              Invoice Number:
+          <input
+            required
+            className="flex-1 max-w-[300px] shadow-md pb-8"
+            placeholder="who is the invoice from?(required)"
+            type="text"
+            name="cashierName"
+            id="cashierName"
+            value={cashierName}
+            onChange={(event) => setCashierName(event.target.value)}
+          />
+          <br/>
+
+<div className="grid grid-cols-2 gap-10">
+  <div className="flex flex-col">
+  <label
+            htmlFor="customerName"
+            className="col-start-2 row-start-1 text-sm font-thin md:text-base"
+          >
+            <br/>
+            Bill TO:
+          </label>
+          <input
+            required
+            className="flex-1 w-[150px] pb-10 shadow-md"
+            placeholder="Customer name"
+            type="text"
+            name="customerName"
+            id="customerName"
+            value={customerName}
+            onChange={(event) => setCustomerName(event.target.value)}
+          />
+  </div>
+  <div className="flex flex-col">
+  <label
+            htmlFor="customerName"
+            className="col-start-2 row-start-1 text-sm font-thin md:text-base"
+          >
+            <br/>
+            Ship To:
+          </label>
+          <input
+            required
+            className="flex-1 w-[150px] pb-10 shadow-md"
+            placeholder="Customer name"
+            type="text"
+            name="customerName"
+            id="customerName"
+            value={customerName}
+            onChange={(event) => setCustomerName(event.target.value)}
+          />
+  </div>
+
+
+
+</div>
+
+          
+        </div>
+</div>
+
+
+<div className="flex flex-col justify-between space-y-2 border-gray-900/10 pb-4 md:flex-row md:items-center md:space-y-0">
+          
+          
+          <div className="-mt-350 flex flex-col items-center space-x-2 ">
+
+            <div className="flex flex-col">
+            <label className="font-bold text-4xl" htmlFor="invoiceNumber" >
+              Invoice
             </label>
-            <input
+              <input
               required
-              className="max-w-[130px]"
+              className="max-w-[130px] shadow-md cursor-pointer hover:border-"
               type="number"
               name="invoiceNumber"
               id="invoiceNumber"
@@ -151,43 +216,104 @@ const InvoiceForm = () => {
               value={invoiceNumber}
               onChange={(event) => setInvoiceNumber(event.target.value)}
             />
+            
+            </div>
+            
+
+            <br/>
+
+            <div className="flex flex-col items-end">
+            
+            <div className="flex">
+<label className="font-thin pr-1" htmlFor="invoiceNumber" >
+              Date
+            </label>
+            
+            <input
+              required
+              className="max-w-[130px] shadow-md curser-pointer hover: border border-gray-700 "
+              type="number"
+              name="invoiceNumber"
+              id="invoiceNumber"
+              min="1"
+              step="1"
+              value={invoiceNumber}
+              onChange={(event) => setInvoiceNumber(event.target.value)}
+            />
+</div>
+            
+            
+
+<div className="flex mt-1">
+<label className="font-thin pr-1" htmlFor="invoiceNumber" >
+              Payment Terms
+            </label>
+            
+            <input
+              required
+              className="max-w-[130px] shadow-md"
+              type="number"
+              name="invoiceNumber"
+              id="invoiceNumber"
+              min="1"
+              step="1"
+              value={invoiceNumber}
+              onChange={(event) => setInvoiceNumber(event.target.value)}
+            />
+</div>
+
+<div className="flex mt-1">
+<label className="font-thin pr-1" htmlFor="invoiceNumber" >
+              Due Date
+            </label>
+            
+            <input
+              required
+              className="max-w-[130px] shadow-md"
+              type="number"
+              name="invoiceNumber"
+              id="invoiceNumber"
+              min="1"
+              step="1"
+              value={invoiceNumber}
+              onChange={(event) => setInvoiceNumber(event.target.value)}
+            />
+</div>
+
+<div className="flex mt-1">
+<label className="font-thin pr-1" htmlFor="invoiceNumber" >
+              PO Number
+            </label>
+            
+            <input
+              required
+              className="max-w-[130px] shadow-md"
+              type="number"
+              name="invoiceNumber"
+              id="invoiceNumber"
+              min="1"
+              step="1"
+              value={invoiceNumber}
+              onChange={(event) => setInvoiceNumber(event.target.value)}
+            />
+</div>
+            </div>
+
+
+
+
+
+
           </div>
         </div>
+
+</div>
+
         
-        <div className="grid grid-cols-2 gap-2 pt-4 pb-8">
-          <label
-            htmlFor="cashierName"
-            className="text-sm font-bold sm:text-base"
-          >
-            Cashier:
-          </label>
-          <input
-            required
-            className="flex-1"
-            placeholder="Cashier name"
-            type="text"
-            name="cashierName"
-            id="cashierName"
-            value={cashierName}
-            onChange={(event) => setCashierName(event.target.value)}
-          />
-          <label
-            htmlFor="customerName"
-            className="col-start-2 row-start-1 text-sm font-bold md:text-base"
-          >
-            Customer:
-          </label>
-          <input
-            required
-            className="flex-1"
-            placeholder="Customer name"
-            type="text"
-            name="customerName"
-            id="customerName"
-            value={customerName}
-            onChange={(event) => setCustomerName(event.target.value)}
-          />
-        </div>
+        
+        
+        
+        
         <table className="my-4 w-full p-4 text-left">
           <thead>
             <tr className="border-b border-gray-900/10 bg-slate-800 text-sm md:text-base">
@@ -205,7 +331,7 @@ const InvoiceForm = () => {
               ) : (
                 <th
                   onClick={() => setShowProduct(true)}
-                  className="cursor-pointer content-start rounded-md bg-slate-800 uppercase text-white hover:shadow-md"
+                  className="cursor-pointer content-start bg-slate-800 uppercase text-white hover:shadow-md"
                 >
                   {product}
                 </th>
@@ -224,7 +350,7 @@ const InvoiceForm = () => {
               ) : (
                 <th
                   onClick={() => setShowQty(true)}
-                  className="cursor-pointer content-start rounded-md bg-slate-800 uppercase text-white hover:shadow-md"
+                  className="cursor-pointer content-start bg-slate-800 uppercase text-white hover:shadow-md"
                 >
                   {qty}
                 </th>
@@ -243,7 +369,7 @@ const InvoiceForm = () => {
               ) : (
                 <th
                   onClick={() => setShowPrice(true)}
-                  className="cursor-pointer  rounded-md bg-slate-800 uppercase text-white hover:shadow-md"
+                  className="cursor-pointer bg-slate-800 uppercase text-white hover:shadow-md"
                 >
                   {price}
                 </th>
@@ -313,6 +439,7 @@ const InvoiceForm = () => {
           </div>
         </div>
       </div>
+
       <div className="basis-1/4 bg-transparent">
         <div className="sticky top-0 z-10 space-y-4 divide-y divide-gray-900/10 pb-8 md:pt-6 md:pl-4">
           <button
